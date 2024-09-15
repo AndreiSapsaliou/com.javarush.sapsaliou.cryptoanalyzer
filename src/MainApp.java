@@ -12,18 +12,36 @@ public class MainApp {
         int i = scanner.nextInt();
 
         if (i==1) {
-            System.out.println("Введите ключ для шифрования:");
+            System.out.println("Введите ключ: ");
             Scanner scanner1 = new Scanner(System.in);
-            
+            Cipher cipher = new Cipher(Alphabet.ALPHABET_RUS);
+            int shift = scanner1.nextInt();
+            System.out.println("Введите текст: ");
+            String text = scanner1.nextLine();
+            cipher.encrypt(text, shift);
+
+            // shift = scanner1.nextInt();
+
+            // text = scanner1.nextLine();
+            // cipher.encrypt(scanner1.nextLine(), scanner1.nextInt());
+            // System.out.println("Введите ключ для шифрования: ");
+            // int shift = scanner1.nextInt();
+            // System.out.println("Введите текст для шифрования: ");
+            // String str = scanner1.nextLine();
+            // String text = scanner1.toString();
+            // cipher.encrypt(scanner1.toString(), scanner1.nextInt());
 
 
-            System.out.println("Введите текст для шифрования:");
+
         }
         else if (i==2) {
             System.out.println("Введите текст для дешифрования:");
+
         }
         else if (i==3) {
             System.out.println("Выход из программы");
+        } else {
+            System.out.println("Введено некорректное значение");
         }
     }
     }

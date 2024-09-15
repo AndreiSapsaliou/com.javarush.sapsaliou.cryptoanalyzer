@@ -8,7 +8,7 @@ public class Cipher {
 
          for (char c : text.toCharArray()) {
              if (Character.isLetter(c)) {
-                 char encryptedChar = (char) (((c - 'a') + shift) % 26 + 'a');
+                 char encryptedChar = (char) (((c - 'a') + shift) % 40 + 'a');
                  result.append(encryptedChar);
              } else {
                  result.append(c);
