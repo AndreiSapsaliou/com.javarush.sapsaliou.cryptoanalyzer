@@ -5,23 +5,10 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 public class FileManager {
-    public String readFile(String filePath) {
-
-        String str = "";
-
-        try {
-            str = new String(
-                    Files.readAllBytes(Paths.get(filePath)));
-        }
-        catch (IOException e) {
-
-            e.printStackTrace();
-        }
-
-        return str;
-    }// Логика чтения файла
+    public String readFile(String filePath) throws IOException {
+        return new String(Files.readAllBytes(Paths.get(filePath)));
     }
-// public void writeFile(String content, String filePath) {
-        // Логика записи файла
-   // }
-
+  public void writeFile(String filePath, String content) throws IOException {
+      Files.write(Paths.get(filePath), content.getBytes());
+         }
+     }
